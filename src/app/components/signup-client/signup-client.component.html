@@ -1,0 +1,111 @@
+<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight" style="padding-top:150px">
+    <div class="form-wrap">
+      <div class="tab">
+        <div class="tab-content">
+          <div class="tab-content-inner active" data-content="signup">
+            <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+              <h1>Inscription Client</h1>	
+            </div>
+            <form [formGroup]="signupClientForm" >
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label for="fullname">Nom</label>
+                  <input type="text" formControlName="Nom" class="form-control">
+                  <div *ngIf="signupClientForm.controls['Nom'].invalid
+                   && (signupClientForm.controls['Nom'].dirty 
+                   || signupClientForm.controls['Nom'].touched)">
+                    <div *ngIf="signupClientForm.controls['Nom'].errors.required">
+                      Le nom est requis
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label for="fullname">Prénom</label>
+                  <input type="text" formControlName="Prenom" class="form-control">
+                  <div *ngIf="signupClientForm.controls['Prenom'].invalid && (signupClientForm.controls['Prenom'].dirty || signupClientForm.controls['Prenom'].touched)">
+                    <div *ngIf="signupClientForm.controls['Prenom'].errors.required">
+                      Le prénom est requis
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label for="fullname">Téléphone</label>
+                  <input type="text" formControlName="telephone" class="form-control">
+                  <div *ngIf="signupClientForm.controls['telephone'].invalid 
+                   && (signupClientForm.controls['telephone'].dirty
+                   || signupClientForm.controls['telephone'].touched)">
+                    <div *ngIf="signupClientForm.controls['telephone'].errors.required">
+                      Le numero du téléphone est requis
+                    </div>
+                    <div *ngIf="signupClientForm.controls['telephone'].errors.minlength">
+                      Le numero du téléphone doit contenir 8 caractères
+                   </div>
+                   <div *ngIf="signupClientForm.controls['telephone'].errors.maxlength">
+                    Le numero du téléphone doit contenir 8 caractères
+                   </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label for="date-start">Adresse</label>
+                  <input type="text" formControlName="adresse" class="form-control">
+                  <div *ngIf="signupClientForm.controls['adresse'].invalid 
+                  && (signupClientForm.controls['adresse'].dirty
+                  || signupClientForm.controls['adresse'].touched)">
+                   <div *ngIf="signupClientForm.controls['adresse'].errors.required">
+                     L'Adresse est requis
+                   </div>
+                 </div>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label for="date-start">Email</label>
+                  <input type="text" formControlName="Email" class="form-control">
+                  <div *ngIf="signupClientForm.controls['Email'].invalid && (signupClientForm.controls['Email'].dirty || signupClientForm.controls['Email'].touched)">
+                    <div *ngIf="signupClientForm.controls['Email'].errors.required">
+                      L'email est requis
+                    </div>
+                    <div *ngIf="signupClientForm.controls['Email'].errors.email">
+                      Format d'email non valide (aaa@exemple.com)
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label for="fullname">Mot de passe</label>
+                  <input type="password" formControlName="Pwd" class="form-control">
+                  <div *ngIf="signupClientForm.controls['Pwd'].invalid 
+               && (signupClientForm.controls['Pwd'].dirty
+               || signupClientForm.controls['Pwd'].touched)">
+               <div *ngIf="signupClientForm.controls['Pwd'].errors.required">
+                  Le mot de passe est requis
+               </div>
+               <div *ngIf="signupClientForm.controls['Pwd'].errors.minlength">
+                  Le mot de passe doit contenir au moins 4 caractères
+               </div>
+               <div *ngIf="signupClientForm.controls['Pwd'].errors.maxlength">
+                  Le mot de passe ne peut pas dépasser 6 caractères
+               </div>
+              </div>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <button type="submit" (click)="signupClient()" [disabled]="signupClientForm.invalid" class="btn btn-primary btn-block">Inscription</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

@@ -1,0 +1,39 @@
+<div class="gtco-section" *ngFor="let m of maisonTable"  style="display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; font-family: Arial, sans-serif; background-color: #f0f0f0;">
+    <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+       <div class="gtco-container">
+         <div class="row">
+           <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+             <h2>{{m.nomMaison}}</h2>
+            
+           </div>
+         </div>
+         <div class="row">
+     
+           <div class="col-lg-4 col-md-4 col-sm-6"  >
+             <a href={{m.image}} class="fh5co-card-item image-popup">
+               <figure>
+                 <div class="overlay"><i class="ti-plus"></i></div>
+                 <img src={{m.image}}  alt="Image" class="img-responsive">
+               </figure>
+               <div class="fh5co-text">
+                 <h2>{{m.nomMaison}},{{m.adresse}}</h2>
+                  <h5>{{m.description}}</h5>
+                 <p><span class="btn btn-primary" >voir plus</span></p>
+                
+               </div>
+               
+             </a>
+             <button class="btn btn-primary" (click)="gotoAfficher(m.id_maison)"> réserver</button>
+           </div>
+          
+          
+     
+          
+          
+          
+     
+         </div>
+       </div>
+    </div>
+</div>
+     

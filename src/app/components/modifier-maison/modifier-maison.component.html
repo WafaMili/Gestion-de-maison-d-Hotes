@@ -1,0 +1,56 @@
+<div id="gtco-subscribe" >
+    <div class="gtco-container">
+        <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+                <h2>Modifier la Maison </h2>
+                
+            </div>
+        </div>
+        <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2">
+                <form class="form-inline"  [formGroup]="editForm">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label for="email" class="sr-only">ID</label>
+                            <input type="email" class="form-control" id="email"  formControlName="id_maison" >
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Nom de Maison</label>
+                            <input type="text" class="form-control"   formControlName="nomMaison" >
+                
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Nombre des Chambres</label>
+                            <input type="text" class="form-control"   formControlName="nbChber" >
+                
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Adresse</label>
+                            <input type="text" class="form-control"   formControlName="adresse" >
+                
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Description</label>
+                            <textarea class="form-control" formControlName="description" rows="3" placeholder="Description" required></textarea>
+                
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-sm-6">
+                        <button type="submit" (click)="Modifier()"  class="btn btn-default btn-block">Modifier</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

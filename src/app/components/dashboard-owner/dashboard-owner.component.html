@@ -1,0 +1,32 @@
+<div style="padding-top:150px">
+  <div  data-animate-effect="fadeInUp" style="padding-top:100px">
+    <button type="button" (click)="AjouterMaison()" class="btn btn-info">Ajouter un maison d'hôte</button>
+    <button type="button" (click)="Ajouterchb()" class="btn btn-info">Ajouter une Chambre</button>
+    <h3>Liste des Maisons</h3>
+  </div>
+  <div style="padding-top:150px">
+<table style="border-collapse: collapse; width: 100%; max-width: 800px; margin: auto;" >
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: left;">ID</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: left;">Nom de la maison</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: left;">Nombre de Chambre</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: left;">Adresse</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: left; max-height: 100px; overflow: auto;">Description</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: left;">Action</td>
+  </tr>
+  <tr *ngFor="let m of maisonTable">
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: left;" >{{m.id_maison}}</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: left;">{{m.nomMaison}}</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: left;">{{m.nbChber}}</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: left;">{{m.adresse}}</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: left; max-height: 100px; overflow: auto;">{{m.description}}</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: left;">
+      <button type="button" (click)="deleteMaison(m.id_maison)" style="margin-right: 5px;"class="btn btn-danger">supprimer</button>
+<button type="button"  [routerLink]="['/modifierMaison', m.id_maison]"  (click)="gotoModifier(m.id_maison)" style="margin-right: 5px;"class="btn btn-warning">Modifier</button>
+<button type="button" (click)="gotoAfficher(m.id_maison)" class="btn btn-info">Afficher</button>
+    </td>
+
+  </tr>
+
+</table>
+</div>
